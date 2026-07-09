@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
         return self.create_user(email, username, password, **extra_fields)
     
 class User(AbstractUser):
-    id = models.UUIDField(primary key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(primarykey=True, default=uuid.uuid4, editable=False)
 
     email = models.EmailField(unique=True)
 
@@ -38,8 +38,9 @@ class User(AbstractUser):
         return self.email
     
 
-    class Profile(models.Model):
-        GENDER_CHOICES = [
+class Profile(models.Model):
+
+    GENDER_CHOICES = [
             ('male', 'Male'),
             ('female', 'Female'),
             ('other', 'Other'),
@@ -62,7 +63,7 @@ class User(AbstractUser):
     ]
 
     user = models.OneToOneField(
-        User,
+        User ,
         on_delete=models.CASCADE,
         related_name='profile'
     )
