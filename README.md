@@ -1,10 +1,13 @@
 🏛️ Gymnasium Prime
 A Production-Grade Backend Ecosystem for Fitness Management
+
 📖 Overview
 
 Gymnasium Prime is a full-stack gym management system built from scratch to production readiness. This project serves as a comprehensive portfolio piece demonstrating mastery of the Django backend ecosystem, payment integration, and modern deployment practices.
 
 The system handles user authentication, membership management, booking schedules, payment processing, and role-based dashboards for members, trainers, and administrators.
+
+
 🚀 Tech Stack
 
     Backend: Django 5.0+, Django REST Framework
