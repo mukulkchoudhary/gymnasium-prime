@@ -1,6 +1,6 @@
 🏛️ Gymnasium Prime
     
-    A Production-Grade Backend Ecosystem for Fitness Management
+    A Production-Grade Backend Ecosystem for Fitness Studio Management
 
 📖 Overview
 
