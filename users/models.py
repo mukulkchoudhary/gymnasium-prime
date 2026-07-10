@@ -51,30 +51,23 @@ class User(AbstractUser):
         return self.email
     
 
-# users/models.py (continued)
-
 class Profile(models.Model):
-    """Extended user profile information"""
-    
-    # Gender choices
-    GENDER_CHOICES = [
-        ('male', 'Male'),
-        ('female', 'Female'),
-        ('other', 'Other'),
-        ('prefer_not_to_say', 'Prefer not to say')
-    ]
 
-    # Fitness goal choices
+    GENDER_CHOICES = [
+            ('male', 'Male'),
+            ('female', 'Female'),
+            ('other', 'Other'),
+            ('prefer_not_to_say', 'Prefer not to say'),
+        ]
+
     FITNESS_GOALS = [
         ('weight_loss', 'Weight Loss'),
         ('muscle_gain', 'Muscle Gain'),
         ('endurance', 'Endurance'),
+        ('flexibility', 'Flexibility'),
         ('general_fitness', 'General Fitness'),
-        ('strength', 'Strength'),
-        ('flexibility', 'Flexibility')
+        ('strength_training', 'Strength Training'),
     ]
-
-    # Fitness level choices
     FITNESS_LEVELS = [
         ('beginner', 'Beginner'),
         ('intermediate', 'Intermediate'),
@@ -82,14 +75,12 @@ class Profile(models.Model):
         ('elite', 'Elite')
     ]
 
-    # One-to-One relationship with User
     user = models.OneToOneField(
-        User, 
-        on_delete=models.CASCADE, 
+        User ,
+        on_delete=models.CASCADE,
         related_name='profile'
     )
 
-    # Personal Info
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES, blank=True)
     profile_picture = models.URLField(max_length=500, blank=True)
